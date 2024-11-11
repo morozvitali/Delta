@@ -1,5 +1,7 @@
 package org.modeus;
 
+import org.modeus.springcourse.Music;
+import org.modeus.springcourse.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
@@ -8,9 +10,10 @@ public class TestSpring {
             "applicationContext.xml"
         );
 
-        TestBean testBean = context.getBean("testBean", TestBean.class);
-        System.out.println(testBean.getName());
-        context.close();
 
+        Music music = (Music) context.getBean("musicBean", Music.class);
+        MusicPlayer musicPlayer = new MusicPlayer(music);
+        musicPlayer.playMusic();
+        context.close();
     }
 }
