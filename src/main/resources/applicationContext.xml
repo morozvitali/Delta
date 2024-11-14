@@ -8,10 +8,14 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="musicBean" class="org.modeus.springcourse.JazzMusic"> </bean>
 
     <bean id="musicPlayer" class = "org.modeus.springcourse.MusicPlayer">
-    <constructor-arg ref="musicBean"/>
+    <property name="music" ref="musicBean"/>
+    <property name = "name" value = "${}"/>
+    <property name = "volume" value = "${}"/>
 
     </bean>
 </beans>
