@@ -1,11 +1,23 @@
 package org.modeus.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MusicPlayer {
 
+    private List <Music> musicList = new ArrayList<>();
 
     private Music music;
     private String name;
     private int volume;
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
+    }
+
+    public List getMusicList() {
+        return musicList;
+    }
 
     public String getName() {
         return name;
