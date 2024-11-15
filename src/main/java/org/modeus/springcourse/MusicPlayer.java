@@ -1,5 +1,6 @@
 package org.modeus.springcourse;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,13 @@ public class MusicPlayer {
     public List getMusicList() {
         return musicList;
     }
+
+    public void playAllMusic() {
+        for (Music music : musicList) {
+            System.out.println(("Playing: " + music.getSong()));
+        }
+    }
+
 
     public String getName() {
         return name;
