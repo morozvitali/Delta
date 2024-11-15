@@ -18,7 +18,8 @@
         <bean id="jazzMusic" class="org.modeus.springcourse.JazzMusic" />
         <bean id="classicalMusic" class="org.modeus.springcourse.ClassicalMusic" />
 
-        <bean id="musicPlayer" class="org.modeus.springcourse.MusicPlayer">
+        <bean id="musicPlayer" class="org.modeus.springcourse.MusicPlayer"
+        scope="prototype">
 
         <!-- Інжекція масиву musicList -->
         <property name="musicList">
